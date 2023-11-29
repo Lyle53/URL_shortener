@@ -1,7 +1,14 @@
 const express = require('express')
 const app = express()
 const port = 3000
-// set router
+
+
+// Model:載入靜態文件
+app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
+
+
+// Controller:set router
 app.get('/', (req, res) =>{
   res.redirect('/URL_Shortener')
 })
