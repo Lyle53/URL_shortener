@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
 const port = 3000
-
+// View:樣版引擎負責畫面呈現
+app.engine('.hbs',engine({extname:'.hbs'}))
+app.set('view engine','.hbs')
+app.set('views','./views')
 
 // Model:載入靜態文件
 app.use(express.static('public'))
